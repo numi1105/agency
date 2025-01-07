@@ -1,0 +1,130 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    font-size: 100%; /* 16px --> 1rem */
+    font-size: 62.5%; /* fz62.5p --> 10px --> 1rem */
+    --main-color: #504b4b;
+    --sub-color: #e9e2d4;
+    --text-color: #555;
+    --rds: 5rem; /* 50px */
+
+    --white50p: rgba(255, 255, 255, 0.5);
+    --black50p: rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+hr,
+.hidden {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer; /* cup : 커서 손가락 모양으로 바꿈 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+img {
+    max-width: 100%;
+}
+body {
+    font: 1.8rem/1.5 "Montserrat", sans-serif;
+    color: var(--text-color);
+    word-break: keep-all; /* wbka:어절 단위 줄바꿈 */
+    text-transform: capitalize; /* ttc: 영문,첫 시작 글자 대문자 */
+}
+
+.inner {
+    /* w118r+m0-a+bg */
+    width: 118rem;
+    margin: 0 auto;
+    background: rgba(255, 255, 0, 0.1);
+}
+
+#header {
+    background: rgba(255, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+#header nav {
+    height: 9rem; /* h9r */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gnb {
+    display: flex;
+    margin-left: auto; /* mla :왼쪽으로 정렬 */
+    margin-right: 4rem; /* mr4 */
+}
+
+.gnb li a {
+    font-weight: 700;
+    color: #fff;
+    /* border: 1px solid #000; */
+    display: block;
+    padding: 1rem 2rem;
+}
+
+.btn-login {
+    /* w4r+h4r+bd+bdrs50p */
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--white50p);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 아이콘 폰트 : 글자의 속성으로 조정 가능 */
+    color: #fff;
+    font-size: 2rem;
+}
+
+.video {
+    /* position: relative; z-index 0인 상태  */
+}
+.video-title {
+    background: #5f5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+.video-wrap {
+    width: 1920px;
+    height: 1080px;
+    background: skyblue;
+}
+
+.video-wrap iframe {
+    width: 100%;
+    height: 100%;
+}
