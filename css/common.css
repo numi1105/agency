@@ -57,74 +57,21 @@ body {
     /* w118r+m0-a+bg */
     width: 118rem;
     margin: 0 auto;
-    background: rgba(255, 255, 0, 0.1);
+    /* background: rgba(255, 255, 0, 0.1); */
 }
 
-#header {
-    background: rgba(255, 0, 0, 0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-}
-
-#header nav {
-    height: 9rem; /* h9r */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.gnb {
-    display: flex;
-    margin-left: auto; /* mla :왼쪽으로 정렬 */
-    margin-right: 4rem; /* mr4 */
-}
-
-.gnb li a {
+.sec-title {
     font-weight: 700;
-    color: #fff;
-    /* border: 1px solid #000; */
-    display: block;
-    padding: 1rem 2rem;
-}
-
-.btn-login {
-    /* w4r+h4r+bd+bdrs50p */
-    width: 4rem;
-    height: 4rem;
-    border: 1px solid var(--white50p);
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* 아이콘 폰트 : 글자의 속성으로 조정 가능 */
-    color: #fff;
-    font-size: 2rem;
-}
-
-.video {
-    /* position: relative; z-index 0인 상태  */
-}
-.video-title {
-    background: #5f5;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: #000;
     text-align: center;
-    color: #fff;
-}
-.video-wrap {
-    width: 1920px;
-    height: 1080px;
-    background: skyblue;
 }
 
-.video-wrap iframe {
-    width: 100%;
-    height: 100%;
+.btn {
+    font-weight: 700;
+    font-size: 2rem;
+    display: inline-block;
+    padding: 1.2rem 3.3rem;
+    border: 1px solid var(--white50p);
+    border-radius: var(--rds);
 }
