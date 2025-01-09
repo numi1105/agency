@@ -285,6 +285,7 @@
 .sns-list {
     display: flex;
     gap: 2.4rem;
+    margin-left: auto;
 }
 
 .sns-list li {
