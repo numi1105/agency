@@ -103,13 +103,14 @@ nav button[type="button"] {
 
 .video-title h2 {
     font-weight: 700;
-    font-size: 7.6rem; /* 7.6r */
+    font-size: clamp(3.2rem, 3.9583vw, 7.6rem); /* clamp(최소, 추천, 최대) */
 }
 .video-title p {
     font-weight: 500;
     font-size: 2rem;
     margin-top: 1rem; /* 1rem=10px */
     padding: 0 26.5rem;
+    padding: 0 23.4513%;
 }
 .video-title .btn {
     font-weight: 700;
@@ -125,6 +126,7 @@ nav button[type="button"] {
 .about {
     /* p8r-0-11.7r */
     padding: 8rem 0 11.7rem;
+    padding: max(8rem, 5vw) 0 max(11.7rem, 10vw);
     text-align: center;
 }
 
@@ -158,6 +160,7 @@ nav button[type="button"] {
 }
 .team-slider {
     margin-top: 4rem;
+    width: 118rem;
 }
 
 .team-slider .swiper-wrapper {
@@ -212,6 +215,10 @@ nav button[type="button"] {
     width: 40.678%;
 }
 
+.work-new figure {
+    height: initial;
+}
+
 .work-new h4 {
     font-weight: 700;
     font-size: 2.4rem;
@@ -234,26 +241,29 @@ nav button[type="button"] {
 .work-list li {
     width: 33rem;
     width: 48.5294%;
-    height: 24.2rem;
+    width: calc((100% - 2rem) / 2);
+    /* height: 24.2rem; */
 }
 
 .form-wrap {
     width: 48.8rem;
-    width: 41.3559%;
+    /* width: 41.3559%; */
     height: 5.4rem;
     border: solid var(--main-color);
     border-radius: var(--rds); /* bdrs */
+
     display: flex;
     margin: 5.2rem auto 0;
     overflow: hidden;
 }
 
 .form-wrap input {
-    /* width: calc(100% - 21.4rem); */
+    width: calc(100% - 21.4rem);
     padding: 0 2.4rem;
     outline: none; /* 폼요소에 focus가 들어가도 검정 라인이 안 나옴 */
 
-    flex-grow: 1; /*gxg1:늘어날 수 있을 때 늘어나라 width:calc로 해 줘도 됨 */
+    /* flex-grow: 1;  */
+    /*gxg1:늘어날 수 있을 때 늘어나라 width:calc로 해 줘도 됨 */
 }
 
 .form-wrap button {
@@ -289,7 +299,7 @@ nav button[type="button"] {
 
 #footer .inner {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -323,25 +333,28 @@ nav button[type="button"] {
 /*  .inner의 크기에 따른 분기점 */
 @media screen and (max-width: 1180px) {
     .inner {
-        width: 90%; /* 임시로 잡은 것임 */
-    }
-}
-
-/* 태블릿 디자인 */
-@media screen and (max-width: 1024px) {
-    .inner {
-        width: 96rem;
+        /* width: 96.4rem; */
         width: 94.1406%;
     }
 
     .video {
         aspect-ratio: 1/0.478515625; /* asr */
     }
+    .video-title {
+        /* width: 71.4rem; */
+        width: 94%;
+    }
 
+    .team-slider {
+        width: 100%;
+    }
+}
+
+/* 태블릿 디자인 */
+@media screen and (max-width: 1024px) {
     .video-title {
         width: 71.4rem;
         width: 69.7266%;
-        background: red;
     }
 
     .video-title p {
@@ -374,11 +387,6 @@ nav button[type="button"] {
         height: initial; /* li가 아래로 밀고있어서 세로 크기를 초기화 시키기 : initial (초기값) 또는 auto */
     }
 
-    .form-wrap {
-        width: 48.8rem;
-        width: 50.6224%;
-    }
-
     .map-wrap {
         /* height: 84.6rem; */
         height: inherit; /* hi pc버전의 세로크기가 남아있어서 짤리므로 세로 초기화시키기 */
@@ -386,8 +394,8 @@ nav button[type="button"] {
     }
 }
 
-/* 모바일 디자인 */
-@media screen and (max-width: 390px) {
+/* 필요에 의한 분기 추가 */
+@media screen and (max-width: 800px) {
     .inner {
         width: 89.7436%; /* 350/390*100 */
     }
@@ -411,13 +419,12 @@ nav button[type="button"] {
     }
     .video {
         aspect-ratio: 1/1.3846;
-    }
-    .video-title {
-        width: 89.7436%;
+        /* 동영상 대신 이미지 */
+        background: url(https://sports.hankooki.com/news/photo/202310/6842896_1049387_4447.jpg) no-repeat 50% / cover;
     }
 
-    .video-title h2 {
-        font-size: 3.2rem;
+    .video-title {
+        width: 89.7436%;
     }
 
     .video-title p {
@@ -426,6 +433,21 @@ nav button[type="button"] {
         margin-right: 1.2rem;
     }
 
+    .video-wrap {
+        aspect-ratio: initial;
+        height: 100%;
+
+        /* 이미지를 사용하는 방법 */
+        display: none;
+    }
+
+    ..form-wrap {
+        width: 90%;
+    }
+}
+
+/* 모바일 디자인 */
+@media screen and (max-width: 600px) {
     .about figure {
         aspect-ratio: 1;
     }
@@ -446,6 +468,10 @@ nav button[type="button"] {
 
     .form-wrap {
         width: 100%;
+    }
+
+    .form-wrap input {
+        width: calc(100% - 8rem);
     }
 
     .form-wrap button {
